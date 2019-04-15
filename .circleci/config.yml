@@ -16,7 +16,7 @@ jobs:
       - run: go get github.com/AlekSi/gocov-xml
       - run: go get -u github.com/jstemmer/go-junit-report
       - run: mkdir -p test-results/phonebook
-      - run: go test -v -coverprofile=c.out 2>&1| go-junit-report > test-resutls/phonebook/results.xml
+      - run: go test -v -coverprofile=c.out 2>&1| go-junit-report > test-results/phonebook/results.xml
       - run: gocov convert c.out | gocov-xml -source /go/src/github.com/srowles/phonebook > test-results/phonebook/cover.xml
       - run: go build -o phonebook.exe cmd/phonebook/main.go
       - store_test_results:
